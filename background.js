@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.declarativeNetRequest.onRuleRequest.addListener(
   (details) => {
-    if (details.url.host === "googleusercontent.com/youtube.com/0" || details.url.host === "googleusercontent.com/youtube.com/1") {
+    if (details.url.host.includes("youtube.com")) {
       return { redirectUrl: "https://www.notion.so" };
     }
   },
