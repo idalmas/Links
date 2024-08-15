@@ -3,7 +3,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(
     if (details.url.includes("https://www.youtube.com/")) {
       chrome.tabs.update(details.tabId, {url: "https://www.notion.so/"});
     }
-    if (details.url.includes("https://x.com/")) {
+    if (details.url.includes("https://x.com/home")) {
       chrome.tabs.update(details.tabId, {url: "https://www.notion.so/"});
     }
   },
