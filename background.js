@@ -1,12 +1,12 @@
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.action.disable(); // Disable the action button if present
-});
-
-chrome.declarativeNetRequest.onRuleRequest.addListener(
-  (details) => {
-    if (details.url.host.includes("youtube.com")) {
-      return { redirectUrl: "https://www.notion.so" };
+chrome.webNavigation.onBeforeNavigate.addListener(
+  function(details) {
+    if (details.url.includes("youtube.com")) {
+      chrome.tabs.update(details.tabId, {url: "https://www.notion.so"});
     }
   },
-  { urls: ["<all_urls>"] }
+  {
+    url: [
+      {hostContains: "youtube.com"}
+    ]
+  }
 );
