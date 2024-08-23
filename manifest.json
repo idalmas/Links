@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "YouTube to Notion Redirector",
+  "name": "YouTube Redirect",
   "version": "1.0",
-  "description": "Redirects from YouTube to Notion",
+  "description": "Redirects from YouTube homepage to a specific Shorts video",
   "permissions": [
     "webNavigation"
   ],
@@ -10,4 +10,3 @@
     "service_worker": "background.js"
   }
 }
-
